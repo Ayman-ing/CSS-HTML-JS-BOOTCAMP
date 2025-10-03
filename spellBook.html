@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wizard's Spellbook 🪄</title>
+  <style>
+    body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  padding: 30px;
+  background: #f0f0f8;
+}
+
+h1 {
+  color: #4b0082;
+}
+
+.boxes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  border: 2px solid #333;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hidden box */
+.hidden {
+  display: none;
+}
+
+/* Active / glowing box */
+.active {
+  box-shadow: 0 0 20px 5px gold;
+}
+
+/* Open box effect */
+.open {
+  transform: rotate(15deg) scale(1.1);
+  border-color: #ff69b4;
+}
+
+/* Magic button */
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #4b0082;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #6a00d4;
+}
+
+  </style>
+</head>
+<body>
+  <h1>🪄 Wizard's Spellbook</h1>
+
+  <div class="boxes">
+    <div id="box1" class="box">🟦 Box 1</div>
+    <div id="box2" class="box hidden">🟩 Box 2</div>
+    <div id="box3" class="box">🟪 Box 3</div>
+  </div>
+
+  <button id="magicBtn">Cast Spell!</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
