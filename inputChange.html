@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Live Preview</h2>
+<input type="text" id="nameInput" placeholder="Type your name">
+<p>Your input: <span id="display"></span></p>
+<script>
+    const input = document.getElementById('nameInput');
+const display = document.getElementById('display');
+
+// Using the 'input' event for live updates
+input.addEventListener('input', (event) => {
+  display.textContent = event.target.value;
+});
+
+</script>
+</body>
+</html>
