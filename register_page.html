@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+
+      .form-container {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      button {
+        width: 70%;
+        padding: 12px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .copyright {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container" onsubmit="submitForm(event)">
+      <h1>Register</h1>
+      <form>
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email" required />
+        <input
+          type="password"
+          oninput="checkPassword(this)"
+          placeholder="Password"
+          required
+        />
+        <p id="password-message"></p>
+        <button type="submit">Register</button>
+      </form>
+      <div id="copyright"></div>
+    </div>
+
+    <script>
+      document.getElementById("copyright").textContent = `© ${new Date().getFullYear()} My Website`;
+
+      function submitForm(event) {
+        event.preventDefault();
+        console.log("form submitted successffuly :D")
+      }
+      function checkPassword(inputElement) {
+        const element = document.getElementById("password-message");
+        if (inputElement.value.length === 0) element.textContent=""
+        else if (inputElement.value.length<8) {
+              element.textContent="password should be more than 8 chars";
+              element.style.color="red";
+          }
+          else {
+              element.textContent="strong password";
+              element.style.color="green";
+          }
+      }
+    </script>
+  </body>
+</html>
